@@ -11,7 +11,7 @@ import XCTest
 
 class NSDictionaryTests: XCTestCase {
     
-    @available(*, deprecated: 1.8)
+    @available(*, deprecated)
     func testDicToJSON() {
         let dic: NSDictionary = ["foo":"bar"]
         let json = dic.formatJSON()
@@ -19,7 +19,7 @@ class NSDictionaryTests: XCTestCase {
         XCTAssertEqual(json, str)
     }
     
-    @available(*, deprecated: 1.8)
+    @available(*, deprecated)
     func testJSONtoDic() {
         
         let str = "{\"foo\":\"bar\"}"

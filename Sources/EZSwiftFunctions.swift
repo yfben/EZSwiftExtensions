@@ -213,6 +213,7 @@ public struct ez {
     //TODO: Document this, add tests to this
     /// EZSE: Iterates through enum elements, use with (for element in ez.iterateEnum(myEnum))
     /// http://stackoverflow.com/questions/24007461/how-to-enumerate-an-enum-with-string-type
+    /// Attention!!! This function doesn't work in swift 5.0, It works well in swift 4.x
     public static func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
         var i = 0
         return AnyIterator {

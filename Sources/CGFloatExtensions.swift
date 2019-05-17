@@ -15,7 +15,7 @@ extension CGFloat {
     /// EZSE: Return the central value of CGFloat.
     public var center: CGFloat { return (self / 2) }
 
-    @available(*, deprecated: 1.8, renamed: "degreesToRadians")
+    @available(*, deprecated, renamed: "degreesToRadians")
     public func toRadians() -> CGFloat {
         return (.pi * self) / 180.0
     }

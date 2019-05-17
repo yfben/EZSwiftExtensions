@@ -13,8 +13,8 @@ extension Bool {
     /// EZSE: Toggle boolean value.
     @discardableResult
     public mutating func toggle() -> Bool {
-        self = !self
-        return self
+        let value = !self
+        return value
     }
     
     /// EZSE: Return inverted value of bool.
