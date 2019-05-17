@@ -87,7 +87,7 @@ Easily access your ViewController on top of your view stack:
 ``` swift
 ez.topMostViewController?.presentViewController(myAlertController, animated: true, completion: nil)
 // topMostViewController is your rootViewController
-// Intended for showing small VCs like UIAlertControllerstring.length, string.capitalizefirst, string.trim, string.isemail, 
+// Intended for showing small VCs like UIAlertControllerstring.length, string.capitalizefirst, string.trim, string.isemail,
 ```
 Easily initialize your colors:
 ``` swift
@@ -124,6 +124,29 @@ ez.detectScreenShot { () -> () in
 
 ## Installation
 
+### Attention!
+The Swift4/5 version can user frome other contributors, we will merge it to this project ASAP
+```rudy
+pod 'EZSwiftExtensions', :git => 'https://github.com/ceeyang/EZSwiftExtensions.git', :branch => 'Swift5.0' # For Swift 5.0
+pod 'EZSwiftExtensions', :git => 'https://github.com/shanyanhai/EZSwiftExtensions.git', :branch => 'Swift4.2' # For Swift 4.2
+```
+
+*** In Swift 5, This function can't work, It is still to be fix! ***
+```swift
+//TODO: Document this, add tests to this
+/// EZSE: Iterates through enum elements, use with (for element in ez.iterateEnum(myEnum))
+/// http://stackoverflow.com/questions/24007461/how-to-enumerate-an-enum-with-string-type
+/// Attention!!! This function doesn't work in swift 5.0, It works well in swift 4.x
+public static func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+    var i = 0
+    return AnyIterator {
+        let next = withUnsafePointer(to: &i) { $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee } }
+        if next.hashValue != i { return nil }
+        i += 1
+        return next
+    }
+}
+```
 ### Manually (~10 seconds)
 
 1. Download and drop '/Sources' in your project.  
@@ -166,7 +189,7 @@ github "goktugyil/EZSwiftExtensions"
 
 - More extensions! Please if there is an extension you are constantly using, send a pull request now!
 - Fancy pictures and jpgs in documentation.
-- Documentations inside code 
+- Documentations inside code
 - List of contents inside readme
 - Completing `TODO`s in source code.
 - OSX compatibility and add here https://github.com/AndrewSB/awesome-osx
