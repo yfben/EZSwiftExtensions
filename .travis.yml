@@ -1,6 +1,6 @@
 osx_image: xcode10.2.1
-language: swift
-rvm: 2.6.3
+language: objective-c
+rvm: 2.2.2
 cache: cocoapods
 
 env:
@@ -8,8 +8,10 @@ env:
     - PROJECT=EZSwiftExtensions.xcodeproj
 
 before_install:
-  - gem update bundle
-  - gem install cocoapods --pre
+  - gem uninstall bundle
+  - gem update
+  - gem install bundle
+  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
   - gem install xcpretty
   - gem install xcpretty-json-formatter
   - brew unlink swiftlint
