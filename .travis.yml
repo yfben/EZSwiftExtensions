@@ -9,7 +9,7 @@ env:
 
 before_install:
   - gem update bundle
-  - gem install cocoapods --pre --no-ri --no-document --quiet
+  - gem install cocoapods --pre
   - gem install xcpretty
   - gem install xcpretty-json-formatter
   - brew unlink swiftlint
